@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RIVO Lifestyle</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#fff;
+color:#222;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:#fff;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+.logo{
+font-size:30px;
+font-weight:700;
+letter-spacing:2px;
+}
+
+nav a{
+text-decoration:none;
+color:#222;
+margin-left:25px;
+font-weight:500;
+}
+
+.hero{
+height:100vh;
+background:url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&q=80') center/cover;
+display:flex;
+align-items:center;
+padding:0 8%;
+color:#fff;
+}
+
+.hero-content{
+max-width:600px;
+}
+
+.hero h1{
+font-size:65px;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:25px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 35px;
+background:#000;
+color:#fff;
+text-decoration:none;
+border-radius:40px;
+}
+
+.section-title{
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+}
+
+.categories{
+padding:100px 8%;
+}
+
+.category-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+overflow:hidden;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+
+.card img{
+width:100%;
+height:350px;
+object-fit:cover;
+}
+
+.card h3{
+padding:20px;
+text-align:center;
+}
+
+.products{
+padding:100px 8%;
+background:#f8f8f8;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.product{
+background:#fff;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+transition:.3s;
+}
+
+.product:hover{
+transform:translateY(-8px);
+}
+
+.product img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.product-info{
+padding:20px;
+}
+
+.product-info h4{
+margin-bottom:10px;
+}
+
+.price{
+font-size:20px;
+font-weight:700;
+color:#000;
+}
+
+.about{
+padding:100px 8%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+}
+
+.about h2{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.testimonials{
+padding:100px 8%;
+background:#111;
+color:#fff;
+text-align:center;
+}
+
+.testimonial-box{
+max-width:700px;
+margin:auto;
+font-size:20px;
+line-height:1.8;
+}
+
+.contact{
+padding:100px 8%;
+text-align:center;
+}
+
+.contact h2{
+margin-bottom:20px;
+font-size:40px;
+}
+
+.contact p{
+margin-bottom:15px;
+}
+
+footer{
+background:#000;
+color:#fff;
+text-align:center;
+padding:25px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
+}
+
+.about{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">RIVO</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Collection</a>
+<a href="#">Men</a>
+<a href="#">About</a>
+<a href="#">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Elevate Your Style With RIVO Lifestyle</h1>
+<p>Premium Fashion | Trendy Collection | Affordable Luxury</p>
+<a href="#" class="btn">Shop Now</a>
+</div>
+</section>
+
+<section class="categories">
+
+<h2 class="section-title">Shop By Category</h2>
+
+<div class="category-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+<h3>T-Shirts</h3>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf">
+<h3>Shirts</h3>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
+<h3>Casual Wear</h3>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c">
+<h3>Denims</h3>
+</div>
+
+</div>
+</section>
+
+<section class="products">
+
+<h2 class="section-title">Trending Collection</h2>
+
+<div class="product-grid">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234">
+<div class="product-info">
+<h4>Premium Black Shirt</h4>
+<p class="price">₹999</p>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b">
+<div class="product-info">
+<h4>Oversized T-Shirt</h4>
+<p class="price">₹699</p>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b">
+<div class="product-info">
+<h4>Casual Denim Jacket</h4>
+<p class="price">₹1499</p>
+</div>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
+<div class="product-info">
+<h4>Luxury Polo T-Shirt</h4>
+<p class="price">₹899</p>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="about">
+
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
+
+<div>
+<h2>About RIVO Lifestyle</h2>
+
+<p>
+RIVO Lifestyle brings premium fashion and modern trends together.
+Explore our exclusive collection of shirts, t-shirts, denims,
+jackets and everyday essentials designed for confident men.
+</p>
+</div>
+
+</section>
+
+<section class="testimonials">
+
+<h2 class="section-title">What Customers Say</h2>
+
+<div class="testimonial-box">
+"Excellent quality clothing with premium fitting.
+One of the best fashion stores in Nagarabhavi."
+</div>
+
+</section>
+
+<section class="contact">
+
+<h2>Visit Store</h2>
+
+<p>Nagarabhavi Main Road, Bengaluru</p>
+<p>+91 9876543210</p>
+<p>rivolifestyle@gmail.com</p>
+
+</section>
+
+<footer>
+© 2026 RIVO Lifestyle. All Rights Reserved.
+</footer>
+
+<script>
+
+document.querySelectorAll('nav a').forEach(link=>{
+link.addEventListener('click',e=>{
+e.preventDefault();
+});
+});
+
+</script>
+
+</body>
+</html>
