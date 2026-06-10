@@ -5,364 +5,483 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RIVO Lifestyle</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:Segoe UI,sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
 background:#fff;
 color:#222;
+overflow-x:hidden;
 }
 
+/* HEADER */
 header{
 position:fixed;
 top:0;
+left:0;
 width:100%;
-background:#fff;
-box-shadow:0 2px 10px rgba(0,0,0,.1);
-padding:15px 8%;
+padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
+background:rgba(255,255,255,.95);
+backdrop-filter:blur(10px);
+box-shadow:0 2px 15px rgba(0,0,0,.08);
 z-index:1000;
 }
 
 .logo{
-font-size:30px;
-font-weight:700;
-letter-spacing:2px;
+font-size:32px;
+font-weight:900;
+letter-spacing:3px;
+}
+
+.menu-btn{
+font-size:34px;
+cursor:pointer;
+font-weight:bold;
+user-select:none;
+}
+
+nav{
+position:fixed;
+top:0;
+right:-300px;
+width:280px;
+height:100vh;
+background:#111;
+padding-top:80px;
+transition:.4s;
+z-index:999;
+}
+
+nav.active{
+right:0;
 }
 
 nav a{
+display:block;
+color:white;
 text-decoration:none;
-color:#222;
-margin-left:25px;
-font-weight:500;
+padding:18px 30px;
+font-size:18px;
+border-bottom:1px solid rgba(255,255,255,.1);
+transition:.3s;
 }
 
+nav a:hover{
+background:#222;
+}
+
+.close-btn{
+position:absolute;
+top:20px;
+right:25px;
+font-size:35px;
+color:white;
+cursor:pointer;
+}
+
+/* HERO */
 .hero{
 height:100vh;
-background:url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1600&q=80') center/cover;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1600')
+center/cover;
 display:flex;
+justify-content:center;
 align-items:center;
-padding:0 8%;
-color:#fff;
-}
-
-.hero-content{
-max-width:600px;
+text-align:center;
+color:white;
+padding:20px;
 }
 
 .hero h1{
-font-size:65px;
-line-height:1.1;
-margin-bottom:20px;
+font-size:75px;
+margin-bottom:15px;
 }
 
 .hero p{
-font-size:18px;
+font-size:22px;
 margin-bottom:25px;
 }
 
 .btn{
 display:inline-block;
-padding:14px 35px;
-background:#000;
-color:#fff;
+padding:15px 35px;
+background:white;
+color:black;
 text-decoration:none;
 border-radius:40px;
+font-weight:bold;
+transition:.3s;
 }
 
-.section-title{
+.btn:hover{
+transform:translateY(-5px);
+}
+
+/* SECTION */
+section{
+padding:90px 8%;
+}
+
+.title{
 text-align:center;
-font-size:40px;
-margin-bottom:50px;
+font-size:42px;
+margin-bottom:45px;
 }
 
-.categories{
-padding:100px 8%;
-}
-
-.category-grid{
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
 .card{
-overflow:hidden;
-border-radius:15px;
-box-shadow:0 4px 15px rgba(0,0,0,.1);
-}
-
-.card img{
-width:100%;
-height:350px;
-object-fit:cover;
-}
-
-.card h3{
-padding:20px;
-text-align:center;
-}
-
-.products{
-padding:100px 8%;
-background:#f8f8f8;
-}
-
-.product-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-}
-
-.product{
-background:#fff;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-transition:.3s;
-}
-
-.product:hover{
-transform:translateY(-8px);
-}
-
-.product img{
-width:100%;
-height:320px;
-object-fit:cover;
-}
-
-.product-info{
-padding:20px;
-}
-
-.product-info h4{
-margin-bottom:10px;
-}
-
-.price{
-font-size:20px;
-font-weight:700;
-color:#000;
-}
-
-.about{
-padding:100px 8%;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
-}
-
-.about img{
-width:100%;
+background:white;
+padding:30px;
 border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+transition:.4s;
 }
 
-.about h2{
+.card:hover{
+transform:translateY(-10px);
+}
+
+.icon{
 font-size:45px;
-margin-bottom:20px;
-}
-
-.testimonials{
-padding:100px 8%;
-background:#111;
-color:#fff;
-text-align:center;
-}
-
-.testimonial-box{
-max-width:700px;
-margin:auto;
-font-size:20px;
-line-height:1.8;
-}
-
-.contact{
-padding:100px 8%;
-text-align:center;
-}
-
-.contact h2{
-margin-bottom:20px;
-font-size:40px;
-}
-
-.contact p{
 margin-bottom:15px;
 }
 
-footer{
-background:#000;
-color:#fff;
+/* COLLECTION */
+.collection-card{
+height:250px;
+border-radius:20px;
+overflow:hidden;
+position:relative;
+}
+
+.collection-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.collection-card h3{
+position:absolute;
+bottom:15px;
+left:15px;
+color:white;
+background:rgba(0,0,0,.6);
+padding:10px 15px;
+border-radius:10px;
+}
+
+/* BANNER */
+.banner{
+background:linear-gradient(135deg,#111,#333);
+color:white;
+padding:70px 20px;
 text-align:center;
-padding:25px;
+border-radius:25px;
+}
+
+/* GALLERY */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:20px;
+transition:.4s;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+}
+
+/* STATS */
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+text-align:center;
+}
+
+.num{
+font-size:55px;
+font-weight:bold;
+}
+
+/* CONTACT */
+.contact-box{
+text-align:center;
+font-size:20px;
+}
+
+.call-btn{
+display:inline-block;
+margin-top:20px;
+padding:15px 35px;
+background:#111;
+color:white;
+text-decoration:none;
+border-radius:40px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+text-decoration:none;
+color:white;
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+z-index:999;
+}
+
+/* FOOTER */
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+/* ANIMATION */
+.reveal{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
 }
 
 @media(max-width:768px){
 
 .hero h1{
-font-size:40px;
+font-size:45px;
 }
 
-.about{
-grid-template-columns:1fr;
+.hero p{
+font-size:18px;
+}
+
+.title{
+font-size:30px;
 }
 
 }
-
 </style>
 </head>
+
 <body>
 
 <header>
 <div class="logo">RIVO</div>
 
-<nav>
-<a href="#">Home</a>
-<a href="#">Collection</a>
-<a href="#">Men</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
+<div class="menu-btn" onclick="openMenu()">☰</div>
+
+<nav id="menu">
+<div class="close-btn" onclick="closeMenu()">×</div>
+
+<a href="#about" onclick="closeMenu()">About</a>
+<a href="#collection" onclick="closeMenu()">Collection</a>
+<a href="#gallery" onclick="closeMenu()">Gallery</a>
+<a href="#contact" onclick="closeMenu()">Contact</a>
 </nav>
 </header>
 
 <section class="hero">
-<div class="hero-content">
-<h1>Elevate Your Style With RIVO Lifestyle</h1>
-<p>Premium Fashion | Trendy Collection | Affordable Luxury</p>
-<a href="#" class="btn">Shop Now</a>
+<div>
+<h1>RIVO Lifestyle</h1>
+<p>Premium Men's Fashion & Modern Streetwear</p>
+<a href="#collection" class="btn">Explore Collection</a>
 </div>
 </section>
 
-<section class="categories">
+<section id="about" class="reveal">
+<h2 class="title">Why Choose RIVO?</h2>
 
-<h2 class="section-title">Shop By Category</h2>
-
-<div class="category-grid">
+<div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-<h3>T-Shirts</h3>
+<div class="icon">👕</div>
+<h3>Premium Quality</h3>
+<p>Luxury fabrics and perfect fitting.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf">
-<h3>Shirts</h3>
+<div class="icon">🔥</div>
+<h3>Trending Fashion</h3>
+<p>Latest styles inspired by global trends.</p>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
-<h3>Casual Wear</h3>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c">
-<h3>Denims</h3>
+<div class="icon">✨</div>
+<h3>Exclusive Designs</h3>
+<p>Unique collections for modern men.</p>
 </div>
 
 </div>
 </section>
 
-<section class="products">
+<section id="collection" class="reveal">
 
-<h2 class="section-title">Trending Collection</h2>
+<h2 class="title">Featured Collection</h2>
 
-<div class="product-grid">
+<div class="grid">
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234">
-<div class="product-info">
-<h4>Premium Black Shirt</h4>
-<p class="price">₹999</p>
-</div>
+<div class="collection-card">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000">
+<h3>Oversized T-Shirts</h3>
 </div>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b">
-<div class="product-info">
-<h4>Oversized T-Shirt</h4>
-<p class="price">₹699</p>
-</div>
+<div class="collection-card">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1000">
+<h3>Premium Shirts</h3>
 </div>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b">
-<div class="product-info">
-<h4>Casual Denim Jacket</h4>
-<p class="price">₹1499</p>
-</div>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
-<div class="product-info">
-<h4>Luxury Polo T-Shirt</h4>
-<p class="price">₹899</p>
-</div>
+<div class="collection-card">
+<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1000">
+<h3>Cargo Pants</h3>
 </div>
 
 </div>
 
 </section>
 
-<section class="about">
+<section class="reveal">
 
-<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
+<div class="banner">
+<h2>Summer Collection 2026</h2>
+<br>
+<p>Fresh Styles • Bold Designs • Everyday Confidence</p>
+</div>
+
+</section>
+
+<section id="gallery" class="reveal">
+
+<h2 class="title">Fashion Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000">
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1000">
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000">
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1000">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1000">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000">
+
+</div>
+
+</section>
+
+<section class="reveal">
+
+<h2 class="title">Our Growth</h2>
+
+<div class="stats">
 
 <div>
-<h2>About RIVO Lifestyle</h2>
+<div class="num">10K+</div>
+<p>Customers</p>
+</div>
 
-<p>
-RIVO Lifestyle brings premium fashion and modern trends together.
-Explore our exclusive collection of shirts, t-shirts, denims,
-jackets and everyday essentials designed for confident men.
-</p>
+<div>
+<div class="num">25K+</div>
+<p>Products Sold</p>
+</div>
+
+<div>
+<div class="num">4.9★</div>
+<p>Rating</p>
+</div>
+
 </div>
 
 </section>
 
-<section class="testimonials">
+<section id="contact" class="reveal">
 
-<h2 class="section-title">What Customers Say</h2>
+<h2 class="title">Contact Us</h2>
 
-<div class="testimonial-box">
-"Excellent quality clothing with premium fitting.
-One of the best fashion stores in Nagarabhavi."
+<div class="contact-box">
+
+<p>📞 8473898774</p>
+<br>
+<p>RIVO Lifestyle - Premium Men's Fashion</p>
+
+<a href="tel:8473898774" class="call-btn">
+Call Now
+</a>
+
 </div>
-
-</section>
-
-<section class="contact">
-
-<h2>Visit Store</h2>
-
-<p>Nagarabhavi Main Road, Bengaluru</p>
-<p>+91 9876543210</p>
-<p>rivolifestyle@gmail.com</p>
 
 </section>
 
 <footer>
-© 2026 RIVO Lifestyle. All Rights Reserved.
+Krishna.Firstwave Fries © 2026 RIVO Lifestyle. All Rights Reserved.
 </footer>
+
+<a href="https://wa.me/918473898774" class="whatsapp">
+💬
+</a>
 
 <script>
 
-document.querySelectorAll('nav a').forEach(link=>{
-link.addEventListener('click',e=>{
-e.preventDefault();
+function openMenu(){
+document.getElementById("menu").classList.add("active");
+}
+
+function closeMenu(){
+document.getElementById("menu").classList.remove("active");
+}
+
+const reveals=document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll',()=>{
+
+reveals.forEach(item=>{
+
+const top=item.getBoundingClientRect().top;
+
+if(top < window.innerHeight-100){
+item.classList.add('active');
+}
+
 });
+
 });
 
 </script>
